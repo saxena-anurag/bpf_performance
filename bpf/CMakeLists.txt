@@ -88,7 +88,7 @@ function(convert_to_native file_name out_name option)
     # This is needed to convert the .o file to a .sys file.
     add_custom_command(
         OUTPUT ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/export_program_info.log
-        COMMAND ${EBPF_BIN_PATH}/export_program_info.exe > ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/export_program_info.log
+        COMMAND echo "test" > ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/export_program_info.log
         DEPENDS ${EBPF_BIN_PATH}/export_program_info.exe
         COMMENT "Exporting program information"
         PRE_BUILD

@@ -86,13 +86,13 @@ endfunction()
 function(convert_to_native file_name out_name option)
     # Run export_program_info.exe as a pre-build step to export the program information.
     # This is needed to convert the .o file to a .sys file.
-    add_custom_command(
-        OUTPUT ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/export_program_info.log
-        COMMAND ${EBPF_BIN_PATH}/export_program_info.exe > ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/export_program_info.log
-        DEPENDS ${EBPF_BIN_PATH}/export_program_info.exe
-        COMMENT "Exporting program information"
-        PRE_BUILD
-    )
+    # add_custom_command(
+    #     OUTPUT ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/export_program_info.log
+    #     COMMAND ${EBPF_BIN_PATH}/export_program_info.exe > ${CMAKE_RUNTIME_OUTPUT_DIRECTORY}/export_program_info.log
+    #     DEPENDS ${EBPF_BIN_PATH}/export_program_info.exe
+    #     COMMENT "Exporting program information"
+    #     PRE_BUILD
+    # )
     message(STATUS "Converting BPF ${out_name} to native")
 
     set(bpf_obj_file_name ${out_name}.o)

@@ -13,7 +13,7 @@
 // If the key is found in the map, it is updated with 0.
 // If the key is not found in the map, it is added to the map with value 0.
 // lru_key_base is incremented by 1 on every 16th iteration. This is done to simulate a rolling key set.
-
+// Test comment.
 struct
 {
     __uint(type, BPF_MAP_TYPE_LRU_HASH);
